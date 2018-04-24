@@ -29,16 +29,15 @@ const makeTweet = () => {
   let plusOrMinus = Math.floor(Math.random() * 2);
 
   if (randomBodyPart === "neck"){
-    // reading file to get last tweet
-    fs.readFile("neck.txt", "utf8", function(error, data) {
-      // console log errors
-      if (error) {
-        return console.log(error);
-      }
+    // searching tweets to get last tweet
+    Twitter.get('search/tweets', { q: 'neck from:silkebot since:2018-04-23', count: 1 }, function(err, data, response) {
+
       // get rid of all but the numbers from last tweet data 
-      lastGrowth = data.replace(/\D/g,'');
+      lastGrowth = data.statuses[0].text.replace(/\D/g,'');
+
       // initialize new growth
       let newGrowth;
+    
       // add or subtract based on random number
       if(plusOrMinus === 0){
         newGrowth = parseInt(lastGrowth) + randomGrowth;
@@ -52,27 +51,17 @@ const makeTweet = () => {
       // create new tweet
       const newTweet = "my neck is " + newGrowth + " inches today."
 
-      // write new tweet to file
-      fs.writeFile("neck.txt", newTweet, function(err) {
-        // log errors
-        if (err) {
-          return console.log(err);
-        }
-      });
-
       // post tweet to twitter
       Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
-        console.log(data)
+        console.log(data);
       });
     });
   } else if (randomBodyPart === "left arm"){
-    fs.readFile("leftarm.txt", "utf8", function(error, data) {
-      // console log errors
-      if (error) {
-        return console.log(error);
-      }
-      lastGrowth = data.replace(/\D/g,'');
-      
+    Twitter.get('search/tweets', { q: 'left from:silkebot since:2018-04-23', count: 1 }, function(err, data, response) {
+
+      // get rid of all but the numbers from last tweet data 
+      lastGrowth = data.statuses[0].text.replace(/\D/g,'');
+
       let newGrowth;
       
       if(plusOrMinus === 0){
@@ -86,26 +75,16 @@ const makeTweet = () => {
       // create new tweet
       const newTweet = "my left arm is " + newGrowth + " inches long today."
 
-      // write new tweet to file
-      fs.writeFile("leftarm.txt", newTweet, function(err) {
-        // log errors
-        if (err) {
-          return console.log(err);
-        }
-      });
-
       // post tweet to twitter
       Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
-        console.log(data)
+        console.log(data);
       });
     });
   } else if (randomBodyPart === "right arm"){
-    fs.readFile("rightarm.txt", "utf8", function(error, data) {
-      // console log errors
-      if (error) {
-        return console.log(error);
-      }
-      lastGrowth = data.replace(/\D/g,'');
+    Twitter.get('search/tweets', { q: 'right from:silkebot since:2018-04-23', count: 1 }, function(err, data, response) {
+
+      // get rid of all but the numbers from last tweet data 
+      lastGrowth = data.statuses[0].text.replace(/\D/g,'');
 
       let newGrowth;
       
@@ -118,27 +97,17 @@ const makeTweet = () => {
       }
       // create new tweet
       const newTweet = "my right arm is " + newGrowth + " inches long today."
-      
-      // write new tweet to file
-      fs.writeFile("rightarm.txt", newTweet, function(err) {
-        // log errors
-        if (err) {
-          return console.log(err);
-        }
-      });
 
       // post tweet to twitter
       Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
-        console.log(data)
+        console.log(data);
       });
     });
   } else if (randomBodyPart === "fingers"){
-    fs.readFile("fingers.txt", "utf8", function(error, data) {
-      // console log errors
-      if (error) {
-        return console.log(error);
-      }
-      lastGrowth = data.replace(/\D/g,'');
+    Twitter.get('search/tweets', { q: 'fingers from:silkebot since:2018-04-23', count: 1 }, function(err, data, response) {
+
+      // get rid of all but the numbers from last tweet data 
+      lastGrowth = data.statuses[0].text.replace(/\D/g,'');
       
       let newGrowth;
       
@@ -152,18 +121,10 @@ const makeTweet = () => {
       
       // create new tweet
       const newTweet = "my fingers are " + newGrowth + " inches long today."
-      
-      // write new tweet to file
-      fs.writeFile("fingers.txt", newTweet, function(err) {
-        // log errors
-        if (err) {
-          return console.log(err);
-        }
-      });
 
       // post tweet to twitter
       Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
-        console.log(data)
+        console.log(data);
       });
     });
   }
