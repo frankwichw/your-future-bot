@@ -1,0 +1,25 @@
+{
+  "name": "your-future-bot",
+  "version": "1.0.0",
+  "description": "tells the future",
+  "main": "keys.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankwichw/your-future-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankwichw/your-future-bot/issues"
+  },
+  "homepage": "https://github.com/frankwichw/your-future-bot#readme"
+}
