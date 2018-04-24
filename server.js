@@ -61,7 +61,7 @@ const makeTweet = () => {
       });
 
       // post tweet to twitter
-      T.post('statuses/update', { status: newTweet }, function(err, data, response) {
+      Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
         console.log(data)
       });
     });
@@ -95,7 +95,7 @@ const makeTweet = () => {
       });
 
       // post tweet to twitter
-      T.post('statuses/update', { status: newTweet }, function(err, data, response) {
+      Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
         console.log(data)
       });
     });
@@ -128,7 +128,7 @@ const makeTweet = () => {
       });
 
       // post tweet to twitter
-      T.post('statuses/update', { status: newTweet }, function(err, data, response) {
+      Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
         console.log(data)
       });
     });
@@ -162,7 +162,7 @@ const makeTweet = () => {
       });
 
       // post tweet to twitter
-      T.post('statuses/update', { status: newTweet }, function(err, data, response) {
+      Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
         console.log(data)
       });
     });
