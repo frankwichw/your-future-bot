@@ -5,6 +5,7 @@
   "main": "keys.js",
   "dependencies": {
     "fs": "0.0.1-security",
+    "node-twitterbot": "^0.2.2",
     "twit": "^2.2.9"
   },
   "devDependencies": {},

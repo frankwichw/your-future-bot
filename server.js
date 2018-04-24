@@ -169,4 +169,4 @@ const makeTweet = () => {
   }
 };
 
-setInterval(makeTweet, 28800000);
+makeTweet();
