@@ -16,14 +16,6 @@ const name = "Silke";
 // array of possible body parts for 
 const bodyParts = ["neck", "left arm", "right arm", "fingers"];
 
-// object of possible tweets
-// const tweetBase = {
-//   neck: "my neck is " + growth + " inches today.",
-//   leftArm: "my left arm is " + growth + " inches long today.",
-//   rightArm: "my right arm is " + growth + " inches long today.",
-//   fingers: "my fingers are " + growth + " inches long today."
-// };
-
 const makeTweet = () => {
   // getting index between 0 and 3 to access body parts
   let randomNum = Math.floor(Math.random() * 4);
@@ -32,16 +24,42 @@ const makeTweet = () => {
   // choosing amount of growth
   let randomGrowth = Math.floor(Math.random() * 6) + 1;
   // initializing last tweet variable so it doesn't need to be defined in each if/else
-  let lastTweet;
+  let lastGrowth;
+  // generating number to decide on plus or minus
+  let plusOrMinus = Math.floor(Math.random() * 2);
 
   if (randomBodyPart === "neck"){
+    // reading file to get last tweet
     fs.readFile("neck.txt", "utf8", function(error, data) {
       // console log errors
       if (error) {
         return console.log(error);
       }
-      // We will then print the contents of data
-      console.log(data);
+      // get rid of all but the numbers from last tweet data 
+      lastGrowth = data.replace(/\D/g,'');
+      // initialize new growth
+      let newGrowth;
+      // add or subtract based on random number
+      if(plusOrMinus === 0){
+        newGrowth = parseInt(lastGrowth) + randomGrowth;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth > 0){
+        newGrowth = parseInt(lastGrowth) - randomGrowth;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
+        // don't let it go below 0
+        newGrowth = 0;
+      }
+
+      // create new tweet
+      const newTweet = "my neck is " + newGrowth + " inches today."
+
+      // write new tweet to file
+      fs.writeFile("neck.txt", newTweet, function(err) {
+        // log errors
+        if (err) {
+          return console.log(err);
+        }
+      });
+
     });
   } else if (randomBodyPart === "left arm"){
     fs.readFile("leftarm.txt", "utf8", function(error, data) {
@@ -49,8 +67,28 @@ const makeTweet = () => {
       if (error) {
         return console.log(error);
       }
-      // We will then print the contents of data
-      console.log(data);
+      lastGrowth = data.replace(/\D/g,'');
+      
+      let newGrowth;
+      
+      if(plusOrMinus === 0){
+        newGrowth = parseInt(lastGrowth) + randomGrowth;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth > 0){
+        newGrowth = parseInt(lastGrowth) - randomGrowth;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
+        newGrowth = 0;
+      }
+
+      // create new tweet
+      const newTweet = "my left arm is " + newGrowth + " inches long today."
+
+      // write new tweet to file
+      fs.writeFile("leftarm.txt", newTweet, function(err) {
+        // log errors
+        if (err) {
+          return console.log(err);
+        }
+      });
     });
   } else if (randomBodyPart === "right arm"){
     fs.readFile("rightarm.txt", "utf8", function(error, data) {
@@ -58,8 +96,27 @@ const makeTweet = () => {
       if (error) {
         return console.log(error);
       }
-      // We will then print the contents of data
-      console.log(data);
+      lastGrowth = data.replace(/\D/g,'');
+
+      let newGrowth;
+      
+      if(plusOrMinus === 0){
+        newGrowth = parseInt(lastGrowth) + randomGrowth;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth > 0){
+        newGrowth = parseInt(lastGrowth) - randomGrowth;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
+        newGrowth = 0;
+      }
+      // create new tweet
+      const newTweet = "my right arm is " + newGrowth + " inches long today."
+      
+      // write new tweet to file
+      fs.writeFile("rightarm.txt", newTweet, function(err) {
+        // log errors
+        if (err) {
+          return console.log(err);
+        }
+      });
     });
   } else if (randomBodyPart === "fingers"){
     fs.readFile("fingers.txt", "utf8", function(error, data) {
@@ -67,8 +124,28 @@ const makeTweet = () => {
       if (error) {
         return console.log(error);
       }
-      // We will then print the contents of data
-      console.log(data);
+      lastGrowth = data.replace(/\D/g,'');
+      
+      let newGrowth;
+      
+      if(plusOrMinus === 0){
+        newGrowth = parseInt(lastGrowth) + randomGrowth;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth > 0){
+        newGrowth = parseInt(lastGrowth) - randomGrowth;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
+        newGrowth = 0;
+      }
+      
+      // create new tweet
+      const newTweet = "my fingers are " + newGrowth + " inches long today."
+      
+      // write new tweet to file
+      fs.writeFile("fingers.txt", newTweet, function(err) {
+        // log errors
+        if (err) {
+          return console.log(err);
+        }
+      });
     });
   }
 };
