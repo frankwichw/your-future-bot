@@ -60,6 +60,10 @@ const makeTweet = () => {
         }
       });
 
+      // post tweet to twitter
+      T.post('statuses/update', { status: newTweet }, function(err, data, response) {
+        console.log(data)
+      });
     });
   } else if (randomBodyPart === "left arm"){
     fs.readFile("leftarm.txt", "utf8", function(error, data) {
@@ -89,6 +93,11 @@ const makeTweet = () => {
           return console.log(err);
         }
       });
+
+      // post tweet to twitter
+      T.post('statuses/update', { status: newTweet }, function(err, data, response) {
+        console.log(data)
+      });
     });
   } else if (randomBodyPart === "right arm"){
     fs.readFile("rightarm.txt", "utf8", function(error, data) {
@@ -116,6 +125,11 @@ const makeTweet = () => {
         if (err) {
           return console.log(err);
         }
+      });
+
+      // post tweet to twitter
+      T.post('statuses/update', { status: newTweet }, function(err, data, response) {
+        console.log(data)
       });
     });
   } else if (randomBodyPart === "fingers"){
@@ -145,6 +159,11 @@ const makeTweet = () => {
         if (err) {
           return console.log(err);
         }
+      });
+
+      // post tweet to twitter
+      T.post('statuses/update', { status: newTweet }, function(err, data, response) {
+        console.log(data)
       });
     });
   }
