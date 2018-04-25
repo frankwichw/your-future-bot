@@ -1,4 +1,4 @@
-const keys = require("./keys.js");
+let keys = require("./keys.js");
 // import keys from "./keys.js";
 const Twit = require('twit');
 var fs = require("fs");
@@ -131,4 +131,4 @@ const makeTweet = () => {
   }
 };
 
-setInterval(makeTweet, 28800000);
+makeTweet();
