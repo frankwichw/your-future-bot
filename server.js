@@ -1,5 +1,5 @@
-// const keys = require("./keys.js");
-import keys from "./keys.js";
+const keys = require("./keys.js");
+// import keys from "./keys.js";
 const Twit = require('twit');
 var fs = require("fs");
 
