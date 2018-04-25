@@ -131,4 +131,4 @@ const makeTweet = () => {
   }
 };
 
-setInterval(makeTweet, 600000);
+setInterval(makeTweet(), 600000);
