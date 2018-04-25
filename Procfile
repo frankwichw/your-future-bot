@@ -1,1 +1,1 @@
-worker: node server.js keys.js
+worker: node server.js
