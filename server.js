@@ -11,6 +11,7 @@ const Twitter = new Twit({
 
 // her name
 const name = "Silke";
+const sign = "Taurus";
 
 // array of possible body parts for 
 const bodyParts = ["neck", "left arm", "right arm", "fingers"];
@@ -129,4 +130,4 @@ const makeTweet = () => {
   }
 };
 
-makeTweet()
+setInterval(makeTweet, 600000);
