@@ -1,5 +1,5 @@
 # Silke Twitter Bot
-Silke (pronounced Zil-kah) is a twitter bot. Her arms, neck, and fingers have been growing and shrinking since 1898, and with the advent of Twitter, she can now share the fluctuations with the world! 
+Silke (pronounced Sihl-kah) is a twitter bot. Her arms, neck, and fingers have been growing and shrinking since 1898, and with the advent of Twitter, she can now share the fluctuations with the world! 
 ## About Silke
 Born April 23, 1898, Taurus ♉
 ### Likes: 
