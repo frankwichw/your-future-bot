@@ -14,5 +14,7 @@ Born April 23, 1898, Taurus ♉
 ## Follow Her
 [Silke Bot on Twitter](https://twitter.com/silkebot "Hallo, Silke!")
 ## Info
+### Hosted on
+* [Heroku](https://heroku.com/ "Heroku")
 ### Node Packages
 * [Twit](https://www.npmjs.com/package/twit "Twit npm package")
