@@ -1,14 +1,12 @@
-let keys = require("./keys.js");
-// import keys from "./keys.js";
+// let keys = require("./keys.js");
 const Twit = require('twit');
 var fs = require("fs");
 
 const Twitter = new Twit({
-  consumer_key:         keys.CONSUMER_KEY,
-  consumer_secret:      keys.CONSUMER_SECRET,
-  access_token:         keys.ACCESS_TOKEN,
-  access_token_secret:  keys.ACCESS_TOKEN_SECRET,
-  timeout_ms:           1000 * 60,
+  consumer_key:         process.env.CONSUMER_KEY,
+  consumer_secret:      process.env.CONSUMER_SECRET,
+  access_token:         process.env.ACCESS_TOKEN,
+  access_token_secret:  process.env.ACCESS_TOKEN_SECRET
 });
 
 // her name
