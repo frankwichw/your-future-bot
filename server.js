@@ -1,6 +1,5 @@
 // let keys = require("./keys.js");
 const Twit = require('twit');
-var fs = require("fs");
 
 const Twitter = new Twit({
   consumer_key:         process.env.CONSUMER_KEY,
@@ -23,7 +22,7 @@ const makeTweet = () => {
   let randomBodyPart = bodyParts[randomNum];
   // choosing amount of growth
   let randomGrowth = Math.floor(Math.random() * 6) + 1;
-  // initializing last tweet variable so it doesn't need to be defined in each if/else
+  // initializing last tweet variable so it doesn't ne ed to be defined in each if/else
   let lastGrowth;
   // generating number to decide on plus or minus
   let plusOrMinus = Math.floor(Math.random() * 2);
@@ -57,7 +56,7 @@ const makeTweet = () => {
       });
     });
   } else if (randomBodyPart === "left arm"){
-    Twitter.get('search/tweets', { q: 'left from:silkebot since:2018-04-23', count: 1 }, function(err, data, response) {
+    Twitter.get('search/tweets', { q: 'left arm from:silkebot since:2018-04-23', count: 1 }, function(err, data, response) {
 
       // get rid of all but the numbers from last tweet data 
       lastGrowth = data.statuses[0].text.replace(/\D/g,'');
@@ -81,7 +80,7 @@ const makeTweet = () => {
       });
     });
   } else if (randomBodyPart === "right arm"){
-    Twitter.get('search/tweets', { q: 'right from:silkebot since:2018-04-23', count: 1 }, function(err, data, response) {
+    Twitter.get('search/tweets', { q: 'right arm from:silkebot since:2018-04-23', count: 1 }, function(err, data, response) {
 
       // get rid of all but the numbers from last tweet data 
       lastGrowth = data.statuses[0].text.replace(/\D/g,'');
