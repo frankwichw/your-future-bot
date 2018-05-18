@@ -11,8 +11,10 @@ Born April 23, 1898, Taurus ♉
     * Getting pills stuck in her throat
     * Velvet
     * Moths
-## Follow Her
-[Silke Bot on Twitter](https://twitter.com/silkebot "Hallo, Silke!")
+## Running Locally
+Using this bot requires that you set up an [app with Twitter](https://apps.twitter.com/ "Apps.Twitter") in order to get API keys. Once you have keys, clone the repository and replace the "process.env.KEY" values in the Twit object with your own keys. 
+
+At that point you should be able to navigate to the main directory of the repository in your command line, and type `node bot.js` to have Silke tweet to your Twitter account!
 ## Info
 ### Hosted on
 * [Heroku](https://heroku.com/ "Heroku")
