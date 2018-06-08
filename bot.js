@@ -22,10 +22,12 @@ const makeTweet = () => {
   let randomBodyPart = bodyParts[randomNum];
   // choosing amount of growth
   let randomGrowth = Math.floor(Math.random() * 6) + 1;
+  console.log("random growth: " + randomGrowth);
   // initializing last tweet variable so it doesn't ne ed to be defined in each if/else
   let lastGrowth;
   // generating number to decide on plus or minus
   let plusOrMinus = Math.floor(Math.random() * 2);
+  console.log("plus or minus: " + plusOrMinus);
 
   if (randomBodyPart === "neck"){
     // searching tweets to get last tweet
@@ -52,7 +54,7 @@ const makeTweet = () => {
 
       // post tweet to twitter
       Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
-        console.log(data);
+        // console.log(data);
       });
     });
   } else if (randomBodyPart === "left arm"){
@@ -76,7 +78,7 @@ const makeTweet = () => {
 
       // post tweet to twitter
       Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
-        console.log(data);
+        // console.log(data);
       });
     });
   } else if (randomBodyPart === "right arm"){
@@ -89,17 +91,21 @@ const makeTweet = () => {
       
       if(plusOrMinus === 0){
         newGrowth = parseInt(lastGrowth) + randomGrowth;
+        console.log("new growth: " + newGrowth);
       } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth > 0){
         newGrowth = parseInt(lastGrowth) - randomGrowth;
+        console.log("new growth: " + newGrowth);
       } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
         newGrowth = 0;
+        console.log("new growth: " + newGrowth);
       }
       // create new tweet
       const newTweet = "my right arm is " + newGrowth + " inches long today."
+      console.log(newTweet);
 
       // post tweet to twitter
       Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
-        console.log(data);
+        // console.log(data);
       });
     });
   } else if (randomBodyPart === "fingers"){
@@ -123,7 +129,7 @@ const makeTweet = () => {
 
       // post tweet to twitter
       Twitter.post('statuses/update', { status: newTweet }, function(err, data, response) {
-        console.log(data);
+        // console.log(data);
       });
     });
   }
