@@ -22,12 +22,10 @@ const makeTweet = () => {
   let randomBodyPart = bodyParts[randomNum];
   // choosing amount of growth
   let randomGrowth = Math.floor(Math.random() * 6) + 1;
-  console.log("random growth: " + randomGrowth);
   // initializing last tweet variable so it doesn't ne ed to be defined in each if/else
   let lastGrowth;
   // generating number to decide on plus or minus
   let plusOrMinus = Math.floor(Math.random() * 2);
-  console.log("plus or minus: " + plusOrMinus);
 
   if (randomBodyPart === "neck"){
     // searching tweets to get last tweet
@@ -46,6 +44,8 @@ const makeTweet = () => {
         newGrowth = parseInt(lastGrowth) - randomGrowth;
       } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
         // don't let it go below 0
+        newGrowth = 0;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth === 0){
         newGrowth = 0;
       }
 
@@ -71,6 +71,8 @@ const makeTweet = () => {
         newGrowth = parseInt(lastGrowth) - randomGrowth;
       } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
         newGrowth = 0;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth === 0){
+        newGrowth = 0;
       }
 
       // create new tweet
@@ -91,13 +93,12 @@ const makeTweet = () => {
       
       if(plusOrMinus === 0){
         newGrowth = parseInt(lastGrowth) + randomGrowth;
-        console.log("new growth: " + newGrowth);
       } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth > 0){
         newGrowth = parseInt(lastGrowth) - randomGrowth;
-        console.log("new growth: " + newGrowth);
       } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
         newGrowth = 0;
-        console.log("new growth: " + newGrowth);
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth === 0){
+        newGrowth = 0;
       }
       // create new tweet
       const newTweet = "my right arm is " + newGrowth + " inches long today."
@@ -121,6 +122,8 @@ const makeTweet = () => {
       } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth > 0){
         newGrowth = parseInt(lastGrowth) - randomGrowth;
       } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth < 0){
+        newGrowth = 0;
+      } else if (plusOrMinus === 1 && parseInt(lastGrowth) - randomGrowth === 0){
         newGrowth = 0;
       }
       
